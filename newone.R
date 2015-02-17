@@ -13,4 +13,4 @@ ProjectData <- read.csv(paste(local_directory, "OlympicAthletesData.csv", sep = 
 
 ProjectData=data.matrix(ProjectData) 
 
-colnames(datafile_name) <-gsub("\\.","  ",colnames(datafile_name))
+colnames(ProjectData)<-gsub("\\.","  ",colnames(ProjectData))
