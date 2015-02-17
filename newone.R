@@ -15,5 +15,5 @@ ProjectData=data.matrix(ProjectData)
 
 colnames(ProjectData)<-gsub("\\.","  ",colnames(ProjectData))
 
-# now run the app
-runApp(paste(local_directory,"tools",sep="/"))
+  # now run the app
+  runApp(paste(local_directory,"tools", sep="/"))
