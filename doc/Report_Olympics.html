@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Olympic Data Analysis (Since 2000)</title>
+
+<script type="text/javascript">
+window.onload = function() {
+  var imgs = document.getElementsByTagName('img'), i, img;
+  for (i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    // center an image if it is the only element of its parent
+    if (img.parentElement.childElementCount === 1)
+      img.parentElement.style.textAlign = 'center';
+  }
+};
+</script>
+
+
+
+
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+   font-size:2.2em;
+}
+
+h2 {
+   font-size:1.8em;
+}
+
+h3 {
+   font-size:1.4em;
+}
+
+h4 {
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+}
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid #ccc;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<p><link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"></p>
+
+<style type="text/css"> body {padding: 10px 30px 10px 30px;} table,th, td {text-align: center;} </style>
+
+<h1>Olympic Data Analysis (Since 2000)</h1>
+
+<p><strong>Jesus Martin
+Jakob Rieckh
+Nihar R Prasad
+Priya Sankarlingam
+Jason Ng</strong></p>
+
+<h2>The Data</h2>
+
+<p>We took the sample data for Olympics (both summer and winter) from Tableau website. This sample data set has medals (all types) and athletes from each Olympic Games since the 2000 Games in Sydney, Australia. So, the number of data set for each type of Olympics (summer and winter) is four.</p>
+
+<p>We sanity checked the data for several factors including data being in metric form and our empirical contextual knowledge of Olympics.</p>
+
+<h2>Objective</h2>
+
+<p>We set out to analyse the given data in terms of: 
+• country ranking per sport
+• average age of winning a medal </p>
+
+<p>Prediction Objective: On the basis of the past trends for each country, we are going to do a prediction of the medals won by each country</p>
+
+<p>We are also planning to develop an application to come-up with the same.</p>
+
+<h2>Contextual Knowledge</h2>
+
+<p><IMG SRC="/doc/Contextual_Knowledge.png" WIDTH=32 HEIGHT=32></p>
+
+<h2>Process</h2>
+
+<p>We first checked the raw attributes to do a dimensionality reduction using clustering data into independent bunches. We have defined first factors on the basis of sports. We did the factor analysis and further characterized each of our sports in three segments as follows. Basically, we have tried to categorise the top three countries per sport. The relative size of each segment in terms of the total amount of medals won (including gold, silver and bronze) is also indicated below. In doing the analysis, we have included profiling as well as segmentation data. </p>
+
+<h2>Data Validation</h2>
+
+<p>We have done trend analysis to estimate the model. We have analysed trend for top three countries for each sport to further predict a data point for the next Olympics. This has been divided by the two types of Olympics. We further assessed performance on first validation data to see if 2012 figures match the predictive model that we have developed.
+We reiterated the predictive model and finally were able to find a predictor which was closes to London 2012 figures.</p>
+
+<h2>Final Inferences</h2>
+
+<p>•  Our analysis showed that since 2000,  ….. has been the best country in getting Olympic medals combined in all sports.
+• Our prediction is that in the next Olympics,  would be getting the highest number of total medals.
+• Further, by each sport, we are predicting the following table.</p>
+
+<!-- Table generated in R 3.1.2 by googleVis 0.5.8 package -->
+
+<!-- Thu Feb 19 00:27:11 2015 -->
+
+<!-- jsHeader -->
+
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataTableID3922374a9cdd () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+ "Alpine Skiing",
+"Austria" 
+],
+[
+ "Archery",
+"South Korea" 
+],
+[
+ "Athletics",
+"United States" 
+],
+[
+ "Badminton",
+"China" 
+],
+[
+ "Baseball",
+"Cuba" 
+],
+[
+ "Basketball",
+"United States" 
+],
+[
+ "Beach Volleyball",
+"Brazil" 
+],
+[
+ "Biathlon",
+"Germany" 
+],
+[
+ "Bobsleigh",
+"Germany" 
+],
+[
+ "Boxing",
+"Cuba" 
+],
+[
+ "Canoeing",
+"Germany" 
+],
+[
+ "Cross Country Skiing",
+"Norway" 
+],
+[
+ "Curling",
+"Canada" 
+],
+[
+ "Cycling",
+"Great Britain" 
+],
+[
+ "Diving",
+"China" 
+],
+[
+ "Equestrian",
+"Germany" 
+],
+[
+ "Fencing",
+"Italy" 
+],
+[
+ "Figure Skating",
+"Russia" 
+],
+[
+ "Football",
+"Brazil" 
+],
+[
+ "Freestyle Skiing",
+"United States" 
+],
+[
+ "Gymnastics",
+"United States" 
+],
+[
+ "Handball",
+"Spain" 
+],
+[
+ "Hockey",
+"Netherlands" 
+],
+[
+ "Ice Hockey",
+"United States" 
+],
+[
+ "Judo",
+"Japan" 
+],
+[
+ "Luge",
+"Germany" 
+],
+[
+ "Modern Pentathlon",
+"Great Britain" 
+],
+[
+ "Nordic Combined",
+"Austria" 
+],
+[
+ "Rhythmic Gymnastics",
+"Russia" 
+],
+[
+ "Rowing",
+"Great Britain" 
+],
+[
+ "Sailing",
+"Great Britain" 
+],
+[
+ "Shooting",
+"China" 
+],
+[
+ "Short-Track Speed Skating",
+"Canada" 
+],
+[
+ "Skeleton",
+"Canada" 
+],
+[
+ "Ski Jumping",
+"Austria" 
+],
+[
+ "Snowboarding",
+"United States" 
+],
+[
+ "Softball",
+"United States" 
+],
+[
+ "Softball",
+"Australia" 
+],
+[
+ "Speed Skating",
+"Netherlands" 
+],
+[
+ "Swimming",
+"United States" 
+],
+[
+ "Synchronized Swimming",
+"Russia" 
+],
+[
+ "Table Tennis",
+"China" 
+],
+[
+ "Taekwondo",
+"South Korea" 
+],
+[
+ "Tennis",
+"United States" 
+],
+[
+ "Trampoline",
+"China" 
+],
+[
+ "Triathlon",
+"Australia" 
+],
+[
+ "Volleyball",
+"Brazil" 
+],
+[
+ "Waterpolo",
+"United States" 
+],
+[
+ "Weightlifting",
+"China" 
+],
+[
+ "Wrestling",
+"Russia" 
+] 
+];
+data.addColumn('string','Sport');
+data.addColumn('string','Top Country');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartTableID3922374a9cdd() {
+var data = gvisDataTableID3922374a9cdd();
+var options = {};
+options["allowHtml"] = true;
+options["showRowNumber"] = true;
+options["width"] =    900;
+options["height"] =    300;
+options["allowHTML"] = true;
+options["page"] = "disable";
+
+    var chart = new google.visualization.Table(
+    document.getElementById('TableID3922374a9cdd')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "table";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartTableID3922374a9cdd);
+})();
+function displayChartTableID3922374a9cdd() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+ 
+
+<!-- jsChart -->  
+
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartTableID3922374a9cdd"></script>
+ 
+
+<!-- divChart -->
+
+<div id="TableID3922374a9cdd" 
+  style="width: 900; height: 300;">
+</div>
+
+<p>Now we will show which are the top countries in number of sports with the highest number of medals</p>
+
+<!-- Table generated in R 3.1.2 by googleVis 0.5.8 package -->
+
+<!-- Thu Feb 19 00:27:11 2015 -->
+
+<!-- jsHeader -->
+
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataTableID39226ccb9bdc () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+ "United States",
+10 
+],
+[
+ "China",
+6 
+],
+[
+ "Germany",
+5 
+],
+[
+ "Great Britain",
+4 
+],
+[
+ "Russia",
+4 
+],
+[
+ "Austria",
+3 
+],
+[
+ "Brazil",
+3 
+],
+[
+ "Canada",
+3 
+],
+[
+ "Australia",
+2 
+],
+[
+ "Cuba",
+2 
+],
+[
+ "Netherlands",
+2 
+],
+[
+ "South Korea",
+2 
+],
+[
+ "Italy",
+1 
+],
+[
+ "Japan",
+1 
+],
+[
+ "Norway",
+1 
+],
+[
+ "Spain",
+1 
+] 
+];
+data.addColumn('string','Var1');
+data.addColumn('number','# of sports');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartTableID39226ccb9bdc() {
+var data = gvisDataTableID39226ccb9bdc();
+var options = {};
+options["allowHtml"] = true;
+options["showRowNumber"] = true;
+options["width"] =    500;
+options["height"] =    200;
+options["allowHTML"] = true;
+options["page"] = "disable";
+
+    var chart = new google.visualization.Table(
+    document.getElementById('TableID39226ccb9bdc')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "table";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartTableID39226ccb9bdc);
+})();
+function displayChartTableID39226ccb9bdc() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+ 
+
+<!-- jsChart -->  
+
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartTableID39226ccb9bdc"></script>
+ 
+
+<!-- divChart -->
+
+<div id="TableID39226ccb9bdc" 
+  style="width: 500; height: 200;">
+</div>
+
+<p>And we can view these results in a map</p>
+
+<p><strong>Till then&hellip;</strong></p>
+
+</body>
+
+</html>

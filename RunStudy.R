@@ -51,6 +51,11 @@ library(reshape)
 # this loads the selected data: DO NOT EDIT THIS LINE
 ProjectData <- read.csv(paste(paste(local_directory,"data",sep="/"), paste(datafile_name,"csv",sep="."),sep="/"), sep=",", dec=",") 
 #ProjectData=data.matrix(ProjectData) 
+table1 <- summarise(group_by(melt(ProjectData, id=c(3,6,10), measure=c(10)),Country, Sport), sum(value))
+shiny1 <- summarise(group_by(melt(ProjectData, id=c(3,4,6,10), measure=c(10)),Country, Year, Sport), sum(value))
+table2 <- cast(melt(ProjectData, id=c(6), measure=c(2)), Sport ~ variable, mean)
+shiny2 <- summarise(group_by(melt(ProjectData, id=c(2,3,6), measure=c(2)), Country, Sport), mean(value))
+
 
 # ANALYZING THE DATA
 

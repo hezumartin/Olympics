@@ -61,7 +61,34 @@ Final Inferences
 
 ```{r echo=FALSE, message=FALSE, prompt=FALSE, results='asis'}
 table1 <- summarise(group_by(melt(ProjectData, id=c(3,6,10), measure=c(10)),Country, Sport), sum(value))
+names(table1)[3] <- "Medals"
+max <- aggregate(table1$Medals, list(Sport= table1$Sport), max)
+names(max)[2] <- "Medals"
+table1max<- merge(max,table1)
+table1print<- table1max[,c(1,3)]
+names(table1print)[2] <- "Top Country"
+m1<-gvisTable(table1print,options=list(showRowNumber=TRUE,width=900, height=min(300,27*50),allowHTML=TRUE,page='disable'))
+print(m1,'chart')
+````
+Now we will show which are the top countries in number of sports with the highest number of medals
+```{r echo=FALSE, message=FALSE, prompt=FALSE, results='asis'}
+countries <- data.frame(table(table1print[,2]))
+scountries<- countries[order(-countries$Freq),]
+tcountries<- scountries[which(scountries$Freq > 0),]
+names(tcountries)[2]<- "number of sports"
+names(tcountries)[1]<- "Country"
+m2<-gvisTable(tcountries,options=list(showRowNumber=FALSE,width=500, height=min(200,27*20),allowHTML=TRUE,page='disable'))
+print(m2,'chart')
 ```
+And we can view these results in a map
+```{r echo=FALSE, message=FALSE, prompt=FALSE, results='asis'}
+
+geo <- gvisGeoChart(tcountries,locationvar="Country", 
+                 colorvar="number of sports",
+                 options=list(projection="kavrayskiy-vii",width=700, height=500))
+print(geo)
+```
+
 
 ```{r echo=FALSE, message=FALSE, prompt=FALSE, results='asis'}
 ProjectData.m <- melt(ProjectData, id=c(6), measure=c(2))
@@ -69,5 +96,15 @@ table2 <- cast(ProjectData.m, Sport ~ variable, mean)
 ```
 
 **Till then...**
+
+```{r echo=FALSE, message=FALSE, prompt=FALSE, results='asis'}
+
+
+Bar <- gvisColumnChart(table2,
+                    options=list(legend='none', width=1400, height=600, allowHTML=TRUE,page='disable'))
+print(Bar,'chart)
+
+
+
 
 
