@@ -37,6 +37,28 @@ Contextual Knowledge
 
 <IMG SRC="/doc/Contextual_Knowledge.png" WIDTH=32 HEIGHT=32>
 
+
+Process
+--------------------------------------------
+
+We first checked the raw attributes to do a dimensionality reduction using clustering data into independent bunches. We have defined first factors on the basis of sports. We did the factor analysis and further characterized each of our sports in three segments as follows. Basically, we have tried to categorise the top three countries per sport. The relative size of each segment in terms of the total amount of medals won (including gold, silver and bronze) is also indicated below. In doing the analysis, we have included profiling as well as segmentation data. 
+
+
+Data Validation
+--------------------------------------------
+
+We have done trend analysis to estimate the model. We have analysed trend for top three countries for each sport to further predict a data point for the next Olympics. This has been divided by the two types of Olympics. We further assessed performance on first validation data to see if 2012 figures match the predictive model that we have developed.
+We reiterated the predictive model and finally were able to find a predictor which was closes to London 2012 figures.
+
+
+Final Inferences
+--------------------------------------------
+
+•  Our analysis showed that since 2000,  ….. has been the best country in getting Olympic medals combined in all sports.
+•	Our prediction is that in the next Olympics,  would be getting the highest number of total medals.
+•	Further, by each sport, we are predicting the following table.
+
+
 ```{r echo=FALSE, message=FALSE, prompt=FALSE, results='asis'}
 table1 <- summarise(group_by(melt(ProjectData, id=c(3,6,10), measure=c(10)),Country, Sport), sum(value))
 ```
