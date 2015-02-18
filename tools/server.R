@@ -1,7 +1,6 @@
 
-local_directory <- "~/INSEADjan2014/CourseSessions/Sessions23"
+local_directory <- "~/Jason/Desktop/MBA/P3/BigData/Olympics"
 source(paste(local_directory,"R/library.R",sep="/"))
-source(paste(local_directory,"R/heatmapOutput.R",sep="/"))
 
 # To be able to upload data up to 30MB
 options(shiny.maxRequestSize=30*1024^2)
@@ -9,7 +8,7 @@ options(rgl.useNULL=TRUE)
 options(scipen = 50)
 
 # Please enter the maximum number of observations to show in the report and slides (DEFAULT is 100)
-max_data_report = 50 
+max_data_report = 100 
 
 shinyServer(function(input, output,session) {
   
