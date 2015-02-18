@@ -18,9 +18,9 @@ file.copy( htmloutput, paste(local_directory,dochtmloutput, sep="/"), overwrite 
 setwd( "../" )
 unlink( "TMPdirReport", recursive = TRUE )      
 
-#reportfilename = paste(slides_file, "Rmd", sep=".")
+reportfilename = paste(slides_file, "Rmd", sep=".")
 docreportfilename = paste("doc", reportfilename, sep="/")
-#htmloutput = paste(slides_file, "html", sep = ".")
+htmloutput = paste(slides_file, "html", sep = ".")
 dochtmloutput = paste("doc", htmloutput, sep="/")
 
 unlink( "TMPdirSlides", recursive = TRUE )      
