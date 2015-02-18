@@ -2,7 +2,7 @@
 <style type="text/css"> body {padding: 10px 30px 10px 30px;} table,th, td {text-align: center;} </style>
 
 
-Case Solution - Factor Analysis 
+Olympic Athletes
 ========================================================
 
 **Jason Ng
@@ -14,18 +14,7 @@ Jakob Rieckh**
 Introduction
 ---------------------------------------------------------
 
-We have used Boats file with questions 1 to 29. These questions were essentially asked from different customers about their experiences with boats.
-
-When we started doing cluster analysis, we got a club of five major factors. The factoring analysis essentially resulted in five major factors with eigen value greater than 1 and cumulative percentage of explained variance 52.74. So, we decided to club the factors with labels with commonality.
-
-The five factors were:
-Component 1(Qs 9,26,3,13,27,28,14,16,7,17,20): Image/Status Symbol
-Component 2(Qs 18,21,19,24,6,22,7): Leisure
-Component 3(Qs 4,5,15):Brand awareness/high-end preference
-Component 4(Qs 11,16,17): Boat Expertise
-Component 5(Qs 2, 12, 8): Low-end preference
-
-However, since high-end and low-end prefernces both relate to price sensitivity, we collapsed the two factors into price sensitivity.
+...
 
 
 The Data

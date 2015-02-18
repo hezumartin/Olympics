@@ -22,7 +22,6 @@ datafile_name="OlympicAthletesData" # do not add .csv at the end! make sure the 
 # Please ENTER the filename of the Report and Slides (in the doc directory) to generate 
 
 report_file = "Report_Olympics"
-slides_file = "Slides_Olympics"
 
 ###################################
 # Would you like to also start a web application on YOUR LOCAL COMPUTER once the report and slides are generated?
