@@ -2,43 +2,48 @@
 <style type="text/css"> body {padding: 10px 30px 10px 30px;} table,th, td {text-align: center;} </style>
 
 
-Olympic Athletes
+Olympic Data Analysis (Since 2000)
 ========================================================
 
-**Jason Ng
+**Jesus Martin
+Jakob Rieckh
 Nihar R Prasad
-Jesus Martin
 Priya Sankarlingam
-Jakob Rieckh**
-
-Introduction
----------------------------------------------------------
-
-...
+Jason Ng**
 
 
 The Data
 --------------------------------------------
 
+We took the sample data for Olympics (both summer and winter) from Tableau website. This sample data set has medals (all types) and athletes from each Olympic Games since the 2000 Games in Sydney, Australia. So, the number of data set for each type of Olympics (summer and winter) is four.
+
+We sanity checked the data for several factors including data being in metric form and our empirical contextual knowledge of Olympics.
+
+
+Objective
+--------------------------------------------
+
+We set out to analyse the given data in terms of: 
+• country ranking per sport
+•	average age of winning a medal 
+
+Prediction Objective: On the basis of the past trends for each country, we are going to do a prediction of the medals won by each country
+
+We are also planning to develop an application to come-up with the same.
+
+
+Contextual Knowledge
+--------------------------------------------
+
+<IMG SRC="/doc/Contextual_Knowledge.png" WIDTH=32 HEIGHT=32>
 
 ```{r echo=FALSE, message=FALSE, prompt=FALSE, results='asis'}
-# let's make the data into data.matrix classes so that we can easier visualize them
-ProjectDataFactor = data.matrix(ProjectDataFactor)
-ProjectData = data.matrix(ProjectData)
+table1 <- summarise(group_by(melt(ProjectData, id=c(3,6,10), measure=c(10)),Country, Sport), sum(value))
 ```
 
-<div class="row">
-<div class="col-md-6">
 ```{r echo=FALSE, message=FALSE, prompt=FALSE, results='asis'}
-show_data = data.frame(round(ProjectDataFactor,2))
-show_data = show_data[1:min(max_data_report,nrow(show_data)),]
-row<-rownames(show_data)
-dfnew<-cbind(row,show_data)
-change<-colnames(dfnew)
-change[1]<-"Variables"
-colnames (dfnew)<-change
-m1<-gvisTable(dfnew,options=list(showRowNumber=TRUE,width=1220, height=min(400,27*(nrow(show_data)+1)),allowHTML=TRUE,page='disable'))
-print(m1,'chart')
+ProjectData.m <- melt(ProjectData, id=c(6), measure=c(2))
+table2 <- cast(ProjectData.m, Sport ~ variable, mean)
 ```
 </div>
 </div>
