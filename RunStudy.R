@@ -4,7 +4,7 @@ cat("\014")
 
 # Project Name: "Olympic Athletes"
 
-####################################
+###################################
 
 # THESE ARE THE PROJECT PARAMETERS NEEDED TO GENERATE THE REPORT
 
@@ -24,7 +24,7 @@ datafile_name="OlympicAthletesData" # do not add .csv at the end! make sure the 
 report_file = "Report_Olympics"
 slides_file = "Slides_Olympics"
 
-###########################
+###################################
 # Would you like to also start a web application on YOUR LOCAL COMPUTER once the report and slides are generated?
 # Select start_webapp <- 1 ONLY if you run the case on your local computer
 # NOTE: Running the web application on your LOCAL computer will open a new browser tab
@@ -37,14 +37,30 @@ slides_file = "Slides_Olympics"
 start_local_webapp <- 0
 # NOTE: You need to make sure the shiny library is installing (see below)
 
-################################################
+####################################
 # Now run everything
 
 # this loads the selected data: DO NOT EDIT THIS LINE
 ProjectData <- read.csv(paste(paste(local_directory,"data",sep="/"), paste(datafile_name,"csv",sep="."),sep="/"), sep=",", dec=",") 
 ProjectData=data.matrix(ProjectData) 
 
-colnames(ProjectData)<-gsub("\\.","  ",colnames(ProjectData))
+# ANALYZING THE DATA
 
+if (datafile_name == "OlympicAthletesData")
+  colnames(ProjectData)<-gsub("\\.","  ",colnames(ProjectData))
+
+####################################
+# SHINY
+
+if (require(shiny) == FALSE) 
+  install_libraries("shiny")
+
+if (start_local_webapp){
+  
+  # first load the data files in the data directory so that the App see them
+  OlympicAthletesData <- read.csv(paste(local_directory, "data/OlympicAthletesData.csv", sep = "/"), sep=";", dec=",") # this contains only the matrix ProjectData
+  OlympicAthletesData=data.matrix(OlympicAthletesData) # this file needs to be converted to "numeric"....
+  
   # now run the app
-  runApp(paste(local_directory,"tools", sep="/"))
+  runApp(paste(local_directory,"tools", sep="/"))  
+}
