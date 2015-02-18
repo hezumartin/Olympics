@@ -35,24 +35,40 @@ report_file = "Report_Olympics"
 # (DEFAULT is 0). 
 start_local_webapp <- 0
 # NOTE: You need to make sure the shiny library is installing (see below)
-
+# Load required libraries
+if (require(dplyr) == FALSE) 
+  install.packages("dplyr") 
+library(dplyr)
+if (require(reshape2) == FALSE) 
+  install.packages("reshape2") 
+library(reshape2)
+if (require(reshape) == FALSE) 
+  install.packages("reshape") 
+library(reshape)
 ####################################
 # Now run everything
 
 # this loads the selected data: DO NOT EDIT THIS LINE
 ProjectData <- read.csv(paste(paste(local_directory,"data",sep="/"), paste(datafile_name,"csv",sep="."),sep="/"), sep=",", dec=",") 
-ProjectData=data.matrix(ProjectData) 
+#ProjectData=data.matrix(ProjectData) 
 
 # ANALYZING THE DATA
 
 if (datafile_name == "OlympicAthletesData")
   colnames(ProjectData)<-gsub("\\.","  ",colnames(ProjectData))
 
+table1 <- summarise(group_by(melt(ProjectData, id=c(3,6,10), measure=c(10)),Country, Sport), sum(value))
+
+ProjectData.m <- melt(ProjectData, id=c(6), measure=c(2))
+table2 <- cast(ProjectData.m, Sport ~ variable, mean)
+
 ####################################
 # SHINY
 
+source(paste(local_directory,"R/library.R", sep="/"))
 if (require(shiny) == FALSE) 
   install_libraries("shiny")
+source(paste(local_directory,"R/runcode.R", sep = "/"))
 
 if (start_local_webapp){
   
