@@ -9,7 +9,7 @@ datafile_name="OlympicsAthletesData" # do not add .csv at the end! make sure the
 
 # Please ENTER the filename of the Report and Slides (in the doc dfi
 
-ProjectData <- read.csv(paste(local_directory, "OlympicAthletesData.csv", sep = "/"), sep=",", dec=",") 
+ProjectData <- read.csv(paste(local_directory, "/data/OlympicAthletesData.csv", sep = "/"), sep=",", dec=",") 
 
 ProjectData=data.matrix(ProjectData) 
 
