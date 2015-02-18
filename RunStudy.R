@@ -57,11 +57,6 @@ ProjectData <- read.csv(paste(paste(local_directory,"data",sep="/"), paste(dataf
 if (datafile_name == "OlympicAthletesData")
   colnames(ProjectData)<-gsub("\\.","  ",colnames(ProjectData))
 
-table1 <- summarise(group_by(melt(ProjectData, id=c(3,6,10), measure=c(10)),Country, Sport), sum(value))
-
-ProjectData.m <- melt(ProjectData, id=c(6), measure=c(2))
-table2 <- cast(ProjectData.m, Sport ~ variable, mean)
-
 ####################################
 # SHINY
 
