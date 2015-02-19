@@ -180,41 +180,41 @@ Priya Sankarlingam,
 
 <h2>Objective</h2>
 
-<p>We set out to analyse the given data in terms of: 
-• country ranking per sport
-• average age of winning a medal</p>
+<p>We set out to analyse the given data in terms of: </p>
 
-<p>With the goal of having a better understanding on which countries are better at which sports and which countries are better at Olympics in general.</p>
+<p>• country ranking per sport</p>
 
-<p>Prediction Objective: On the basis of the past trends for each country, we are going to do a prediction of the medals won by each country</p>
+<p>• average age of winning a medal</p>
+
+<p>Our goal is to have a better understanding on which countries are better at which sports and which countries are better at Olympics in general.</p>
+
+<p>Then, we want to predict the number of medals that each country will win in the next Summer Olympics, based on how many medals won in the last 4 Summer Olympic games. In order to do that, we will use a linear regression. </p>
 
 <p>We are also planning to develop an application to come-up with more flexibility over the data and more customized conclusions.</p>
 
-<h2>Process</h2>
-
-<p>We first checked the raw attributes to do a dimensionality reduction using clustering data into independent bunches. We have defined first factors on the basis of sports. We did the factor analysis and further characterized each of our sports in three segments as follows. Basically, we have tried to categorise the top three countries per sport. The relative size of each segment in terms of the total amount of medals won (including gold, silver and bronze) is also indicated below. In doing the analysis, we have included profiling as well as segmentation data. </p>
-
 <h2>Data Validation</h2>
 
-<p>We have done trend analysis to estimate the model. We have analysed trend for top three countries for each sport to further predict a data point for the next Olympics. This has been divided by the two types of Olympics. We further assessed performance on first validation data to see if 2012 figures match the predictive model that we have developed.
+<p>We extracted the data from the Tableau website. At the beginningg, we thought it would be a good cource of information to do data analysis but the main challenge that we have faced is format the data in a proper way to get it suitable for our analysis.</p>
+
+<p>We have done trend analysis to estimate the model. We have analysed trend for top country for each sport to further predict a data point for the next Olympics. This has been divided by the two types of Olympics. We further assessed performance on first validation data to see if 2012 figures match the predictive model that we have developed.
 We reiterated the predictive model and finally were able to find a predictor which was closes to London 2012 figures.</p>
 
 <h2>Final Results</h2>
 
-<p>•  Our analysis showed that since 2000,  ….. has been the best country in getting Olympic medals combined in all sports.
+<p>•  Our analysis showed that since 2000,  United States has been the best country in getting Olympic medals combined in all sports.
 • Our prediction is that in the next Olympics,  would be getting the highest number of total medals.
-• Further, by each sport, we are predicting the following table.</p>
+• Further, by each sport, we have the following table for top countries per sport.</p>
 
 <!-- Table generated in R 3.1.2 by googleVis 0.5.8 package -->
 
-<!-- Thu Feb 19 13:15:20 2015 -->
+<!-- Thu Feb 19 14:59:14 2015 -->
 
 <!-- jsHeader -->
 
 <script type="text/javascript">
  
 // jsData 
-function gvisDataTableID46e43b0e88ba () {
+function gvisDataTableID46e450a46c54 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -426,8 +426,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartTableID46e43b0e88ba() {
-var data = gvisDataTableID46e43b0e88ba();
+function drawChartTableID46e450a46c54() {
+var data = gvisDataTableID46e450a46c54();
 var options = {};
 options["allowHtml"] = true;
 options["showRowNumber"] = true;
@@ -437,7 +437,7 @@ options["allowHTML"] = true;
 options["page"] = "disable";
 
     var chart = new google.visualization.Table(
-    document.getElementById('TableID46e43b0e88ba')
+    document.getElementById('TableID46e450a46c54')
     );
     chart.draw(data,options);
     
@@ -461,9 +461,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartTableID46e43b0e88ba);
+callbacks.push(drawChartTableID46e450a46c54);
 })();
-function displayChartTableID46e43b0e88ba() {
+function displayChartTableID46e450a46c54() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -489,12 +489,12 @@ callbacks.shift()();
 
 <!-- jsChart -->  
 
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartTableID46e43b0e88ba"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartTableID46e450a46c54"></script>
  
 
 <!-- divChart -->
 
-<div id="TableID46e43b0e88ba" 
+<div id="TableID46e450a46c54" 
   style="width: 900; height: 300;">
 </div>
 
@@ -511,20 +511,20 @@ Cuba has a varied presence in strength sports like Boxing and Baseball</p>
 
 <p>China is also strong in Badminton or Table Tennis but also in Shooting and many other sports</p>
 
-<p>USA and Australia continue to dominate swimming</p>
+<p>USA and Australia continue to dominate swimming.</p>
 
 <p>Based on the following ranking of countries by the number of countries in which are leaders in medals </p>
 
 <!-- Table generated in R 3.1.2 by googleVis 0.5.8 package -->
 
-<!-- Thu Feb 19 13:15:20 2015 -->
+<!-- Thu Feb 19 14:59:15 2015 -->
 
 <!-- jsHeader -->
 
 <script type="text/javascript">
  
 // jsData 
-function gvisDataTableID46e456e983af () {
+function gvisDataTableID46e442888a6 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -600,8 +600,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartTableID46e456e983af() {
-var data = gvisDataTableID46e456e983af();
+function drawChartTableID46e442888a6() {
+var data = gvisDataTableID46e442888a6();
 var options = {};
 options["allowHtml"] = true;
 options["showRowNumber"] = false;
@@ -611,7 +611,7 @@ options["allowHTML"] = true;
 options["page"] = "disable";
 
     var chart = new google.visualization.Table(
-    document.getElementById('TableID46e456e983af')
+    document.getElementById('TableID46e442888a6')
     );
     chart.draw(data,options);
     
@@ -635,9 +635,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartTableID46e456e983af);
+callbacks.push(drawChartTableID46e442888a6);
 })();
-function displayChartTableID46e456e983af() {
+function displayChartTableID46e442888a6() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -663,27 +663,27 @@ callbacks.shift()();
 
 <!-- jsChart -->  
 
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartTableID46e456e983af"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartTableID46e442888a6"></script>
  
 
 <!-- divChart -->
 
-<div id="TableID46e456e983af" 
+<div id="TableID46e442888a6" 
   style="width: 500; height: 200;">
 </div>
 
-<p>Overall, USA continues to lead by far with China, Germany and Great Britain following and Australia a close 4th, which we can visualize in the following map:</p>
+<p>Overall, USA continues to lead by far with China, Germany and Great Britain following and Russia a close 4th, which we can visualize in the following map:</p>
 
 <!-- GeoChart generated in R 3.1.2 by googleVis 0.5.8 package -->
 
-<!-- Thu Feb 19 13:15:20 2015 -->
+<!-- Thu Feb 19 14:59:15 2015 -->
 
 <!-- jsHeader -->
 
 <script type="text/javascript">
  
 // jsData 
-function gvisDataGeoChartID46e4496344a2 () {
+function gvisDataGeoChartID46e4346e4709 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -759,8 +759,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartGeoChartID46e4496344a2() {
-var data = gvisDataGeoChartID46e4496344a2();
+function drawChartGeoChartID46e4346e4709() {
+var data = gvisDataGeoChartID46e4346e4709();
 var options = {};
 options["width"] =    700;
 options["height"] =    500;
@@ -768,7 +768,7 @@ options["projection"] = "kavrayskiy-vii";
 options["page"] = "disable";
 
     var chart = new google.visualization.GeoChart(
-    document.getElementById('GeoChartID46e4496344a2')
+    document.getElementById('GeoChartID46e4346e4709')
     );
     chart.draw(data,options);
     
@@ -792,9 +792,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartGeoChartID46e4496344a2);
+callbacks.push(drawChartGeoChartID46e4346e4709);
 })();
-function displayChartGeoChartID46e4496344a2() {
+function displayChartGeoChartID46e4346e4709() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -820,12 +820,12 @@ callbacks.shift()();
 
 <!-- jsChart -->  
 
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartGeoChartID46e4496344a2"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartGeoChartID46e4346e4709"></script>
  
 
 <!-- divChart -->
 
-<div id="GeoChartID46e4496344a2" 
+<div id="GeoChartID46e4346e4709" 
   style="width: 700; height: 500;">
 </div>
 
@@ -837,14 +837,14 @@ callbacks.shift()();
 
 <!-- BarChart generated in R 3.1.2 by googleVis 0.5.8 package -->
 
-<!-- Thu Feb 19 13:15:20 2015 -->
+<!-- Thu Feb 19 14:59:15 2015 -->
 
 <!-- jsHeader -->
 
 <script type="text/javascript">
  
 // jsData 
-function gvisDataBarChartID46e46e83c7d1 () {
+function gvisDataBarChartID46e45841345e () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -1044,8 +1044,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartBarChartID46e46e83c7d1() {
-var data = gvisDataBarChartID46e46e83c7d1();
+function drawChartBarChartID46e45841345e() {
+var data = gvisDataBarChartID46e45841345e();
 var options = {};
 options["allowHtml"] = true;
 options["legend"] = "none";
@@ -1053,7 +1053,7 @@ options["width"] =    900;
 options["height"] =   1600;
 
     var chart = new google.visualization.BarChart(
-    document.getElementById('BarChartID46e46e83c7d1')
+    document.getElementById('BarChartID46e45841345e')
     );
     chart.draw(data,options);
     
@@ -1077,9 +1077,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartBarChartID46e46e83c7d1);
+callbacks.push(drawChartBarChartID46e45841345e);
 })();
-function displayChartBarChartID46e46e83c7d1() {
+function displayChartBarChartID46e45841345e() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -1105,12 +1105,12 @@ callbacks.shift()();
 
 <!-- jsChart -->  
 
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBarChartID46e46e83c7d1"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBarChartID46e45841345e"></script>
  
 
 <!-- divChart -->
 
-<div id="BarChartID46e46e83c7d1" 
+<div id="BarChartID46e45841345e" 
   style="width: 900; height: 1600;">
 </div>
 
