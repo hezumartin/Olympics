@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-<style type="text/css"> body {padding: 10px 30px 10px 30px;} table,th, td {text-align: center;} </style>
 
 
 Olympic Data Analysis (Since 2000)
@@ -35,7 +33,7 @@ We are also planning to develop an application to come-up with the same.
 Contextual Knowledge
 --------------------------------------------
 
-<IMG SRC="/doc/Contextual_Knowledge.png" WIDTH=32 HEIGHT=32>
+<IMG SRC="https://github.com/hezumartin/Olympics/blob/master/doc/Contextual%20Knowledge.png">
 
 
 Process
@@ -51,7 +49,7 @@ We have done trend analysis to estimate the model. We have analysed trend for to
 We reiterated the predictive model and finally were able to find a predictor which was closes to London 2012 figures.
 
 
-Final Inferences
+Final Results
 --------------------------------------------
 
 •  Our analysis showed that since 2000,  ….. has been the best country in getting Olympic medals combined in all sports.
@@ -70,7 +68,26 @@ names(table1print)[2] <- "Top Country"
 m1<-gvisTable(table1print,options=list(showRowNumber=TRUE,width=900, height=min(300,27*50),allowHTML=TRUE,page='disable'))
 print(m1,'chart')
 ````
-Now we will show which are the top countries in number of sports with the highest number of medals
+
+Based on these results, we can infer the following:
+
+
+For mountain sports like alpine skiing, countries like Austria and Switzerland are on the top.
+
+For athletics, there was a diverse presence from three continents - USA, Russia and Jamaica
+
+Cuba has a varied presence in strength sports like Boxing and Baseball
+
+For table tennis and badminton, traditional players like China and South Korea have continued to be strong
+
+Russia continues to be one of the strongest countries in Weightlifting and Wrestling
+
+China is also strong in Badminton or Table Tennis but also in Shooting and many other sports
+
+USA and Australia continue to dominate swimming
+
+
+Based on the following ranking of countries by the number of countries in which are leaders in medals 
 ```{r echo=FALSE, message=FALSE, prompt=FALSE, results='asis'}
 countries <- data.frame(table(table1print[,2]))
 scountries<- countries[order(-countries$Freq),]
@@ -80,30 +97,90 @@ names(tcountries)[1]<- "Country"
 m2<-gvisTable(tcountries,options=list(showRowNumber=FALSE,width=500, height=min(200,27*20),allowHTML=TRUE,page='disable'))
 print(m2,'chart')
 ```
-And we can view these results in a map
+
+
+Overall, USA continues to lead by far with China, Germany and Great Britain following and Australia a close 4th, which we can visualize in the following map:
 ```{r echo=FALSE, message=FALSE, prompt=FALSE, results='asis'}
 
 geo <- gvisGeoChart(tcountries,locationvar="Country", 
                  colorvar="number of sports",
-                 options=list(projection="kavrayskiy-vii",width=700, height=500))
-print(geo)
+                 options=list(projection="kavrayskiy-vii",width=700, height=500, page='disable'))
+print(geo,'chart')
 ```
 
 
 ```{r echo=FALSE, message=FALSE, prompt=FALSE, results='asis'}
 ProjectData.m <- melt(ProjectData, id=c(6), measure=c(2))
 table2 <- cast(ProjectData.m, Sport ~ variable, mean)
+table2 <- table2[which(table2$Age > 0),]
 ```
 
-**Till then...**
+Average age by sport
+--------------------------------------------
+We took the age of the medal winners in different sports and averaged it to have a metric that would help us at what age do athletes get medals depending on the sport. 
+```{r echo=FALSE, message=FALSE, prompt=FALSE, results='asis'}
+Bar <- gvisBarChart(table2,
+                    options=list(legend='none', width=900, height=1600))
+print(Bar,'chart')
+````
+Based on age based analysis, we came up with following major insights:
+
+
+The average age of an Olympian winning a medal is 26.4 years
+
+The youngest people to win medals are in Gymnasts - particularly, Rythmic Gymnasts (18.9 years)
+
+Also, with water sports the average age is quite low at around 22.5 years
+
+However, as we thought, with practice sports like Shooting, Curling and Equestrian the average age is high 
+above 30 years with Equestrian having the highest average age at 37.9 years
+
+Also, by law of averages, team sports like Hockey, Basketball and Volleyball have average age near the total average of 26.4 years.
+
+
+
+Number of medals for next summer Olympics?
+--------------------------------------------
+
+Task Description
+For one specific country (in our example we picked the US), we wanted to use the total number of medals won at past Olympic games to predict the metal yield in 2016. We applied a linear regression model to conduct this forecast. Since the number of medals could vary significantly between winter and summer games, we selected only medals won at summer Olympics.
+ 
+Approach
+1)      Convert data into a Pivot Table
+
+2)      Filter out the medals won by the US at summer Olympics
+
+3)      Run the regression (independent variables: year dates -> dependent variables: sum of medals)
+
+4)      Predict the number of medals for 2016 based on the calculated regression coefficients
+
+
 
 ```{r echo=FALSE, message=FALSE, prompt=FALSE, results='asis'}
 
+# Step 4: Estimate the number of medials for 2016
+medalForcast = coeffs[1] + coeffs[2]*2016 
+newYears <- c(years, 2016)
+newMedals <- c(selectedSummer, medalForcast)
+plot(newYears, newMedals, xaxt = "n", xlab="Summer Olympics",ylab="Number of Medals over all Athletes")
+axis(side=1, at=newYears)
+points(2016, medalForcast, col="red")
+title("Scatter Plot for Medals Regression")
+abline(fit)
+````
 
-Bar <- gvisColumnChart(table2,
-                    options=list(legend='none', width=1400, height=600, allowHTML=TRUE,page='disable'))
-print(Bar,'chart)
 
+The number of medals expected for `r reg_country` in 2016 is `r medalForcast`
+
+Conclusion
+The number of medals won by the US team at the last four summer Olympics vary between 243 in 2000 and 317 in 2008. Despite the fact that the number dropped in 2012 to 254, the overall trend is increasing; the upward-slopping regression line has a slop of 2.125. Extrapolating this trend to 2016, gives us a prediction of 291 US medals for the games in Rio de Janeiro.
+ 
+Limitations
+1)      The data source lists all athletes that won Olympic medals – regards if it’s an individual or team sport. This means that team sports have a stronger influence on the regression outcome than sports with only one athlete.
+
+2)      Due to the underlying mechanics of a linear regression all Olympic games influence the forecast for 2016 equally. For a more accurate prediction it would be reasonable to put more weight on the recent years (2012, 2008) at the expense of the earlier years (2004, 2000).
+
+3)      For the sake of this exercise we assumed that the number of sports and team sizes stay constant over the various Olympic games.
 
 
 

@@ -163,10 +163,6 @@ hr {
 </head>
 
 <body>
-<p><link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"></p>
-
-<style type="text/css"> body {padding: 10px 30px 10px 30px;} table,th, td {text-align: center;} </style>
-
 <h1>Olympic Data Analysis (Since 2000)</h1>
 
 <p><strong>Jesus Martin
@@ -193,7 +189,7 @@ Jason Ng</strong></p>
 
 <h2>Contextual Knowledge</h2>
 
-<p><IMG SRC="/doc/Contextual_Knowledge.png" WIDTH=32 HEIGHT=32></p>
+<p><IMG SRC="https://github.com/hezumartin/Olympics/blob/master/doc/Contextual%20Knowledge.png"></p>
 
 <h2>Process</h2>
 
@@ -204,7 +200,7 @@ Jason Ng</strong></p>
 <p>We have done trend analysis to estimate the model. We have analysed trend for top three countries for each sport to further predict a data point for the next Olympics. This has been divided by the two types of Olympics. We further assessed performance on first validation data to see if 2012 figures match the predictive model that we have developed.
 We reiterated the predictive model and finally were able to find a predictor which was closes to London 2012 figures.</p>
 
-<h2>Final Inferences</h2>
+<h2>Final Results</h2>
 
 <p>•  Our analysis showed that since 2000,  ….. has been the best country in getting Olympic medals combined in all sports.
 • Our prediction is that in the next Olympics,  would be getting the highest number of total medals.
@@ -212,14 +208,14 @@ We reiterated the predictive model and finally were able to find a predictor whi
 
 <!-- Table generated in R 3.1.2 by googleVis 0.5.8 package -->
 
-<!-- Thu Feb 19 00:27:11 2015 -->
+<!-- Thu Feb 19 01:46:16 2015 -->
 
 <!-- jsHeader -->
 
 <script type="text/javascript">
  
 // jsData 
-function gvisDataTableID3922374a9cdd () {
+function gvisDataTableID407362dcd5fe () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -431,8 +427,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartTableID3922374a9cdd() {
-var data = gvisDataTableID3922374a9cdd();
+function drawChartTableID407362dcd5fe() {
+var data = gvisDataTableID407362dcd5fe();
 var options = {};
 options["allowHtml"] = true;
 options["showRowNumber"] = true;
@@ -442,7 +438,7 @@ options["allowHTML"] = true;
 options["page"] = "disable";
 
     var chart = new google.visualization.Table(
-    document.getElementById('TableID3922374a9cdd')
+    document.getElementById('TableID407362dcd5fe')
     );
     chart.draw(data,options);
     
@@ -466,9 +462,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartTableID3922374a9cdd);
+callbacks.push(drawChartTableID407362dcd5fe);
 })();
-function displayChartTableID3922374a9cdd() {
+function displayChartTableID407362dcd5fe() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -494,27 +490,43 @@ callbacks.shift()();
 
 <!-- jsChart -->  
 
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartTableID3922374a9cdd"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartTableID407362dcd5fe"></script>
  
 
 <!-- divChart -->
 
-<div id="TableID3922374a9cdd" 
+<div id="TableID407362dcd5fe" 
   style="width: 900; height: 300;">
 </div>
 
-<p>Now we will show which are the top countries in number of sports with the highest number of medals</p>
+<p>Based on these results, we can infer the following:</p>
+
+<p>For mountain sports like alpine skiing, countries like Austria and Switzerland are on the top.</p>
+
+<p>For athletics, there was a diverse presence from three continents - USA, Russia and Jamaica</p>
+
+<p>Cuba has a varied presence in strength sports like Boxing and Baseball</p>
+
+<p>For table tennis and badminton, traditional players like China and South Korea have continued to be strong</p>
+
+<p>Russia continues to be one of the strongest countries in Weightlifting and Wrestling</p>
+
+<p>China is also strong in Badminton or Table Tennis but also in Shooting and many other sports</p>
+
+<p>USA and Australia continue to dominate swimming</p>
+
+<p>Based on the following ranking of countries by the number of countries in which are leaders in medals </p>
 
 <!-- Table generated in R 3.1.2 by googleVis 0.5.8 package -->
 
-<!-- Thu Feb 19 00:27:11 2015 -->
+<!-- Thu Feb 19 01:46:16 2015 -->
 
 <!-- jsHeader -->
 
 <script type="text/javascript">
  
 // jsData 
-function gvisDataTableID39226ccb9bdc () {
+function gvisDataTableID407369b61199 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -583,25 +595,25 @@ var datajson =
 1 
 ] 
 ];
-data.addColumn('string','Var1');
-data.addColumn('number','# of sports');
+data.addColumn('string','Country');
+data.addColumn('number','number of sports');
 data.addRows(datajson);
 return(data);
 }
  
 // jsDrawChart
-function drawChartTableID39226ccb9bdc() {
-var data = gvisDataTableID39226ccb9bdc();
+function drawChartTableID407369b61199() {
+var data = gvisDataTableID407369b61199();
 var options = {};
 options["allowHtml"] = true;
-options["showRowNumber"] = true;
+options["showRowNumber"] = false;
 options["width"] =    500;
 options["height"] =    200;
 options["allowHTML"] = true;
 options["page"] = "disable";
 
     var chart = new google.visualization.Table(
-    document.getElementById('TableID39226ccb9bdc')
+    document.getElementById('TableID407369b61199')
     );
     chart.draw(data,options);
     
@@ -625,9 +637,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartTableID39226ccb9bdc);
+callbacks.push(drawChartTableID407369b61199);
 })();
-function displayChartTableID39226ccb9bdc() {
+function displayChartTableID407369b61199() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -653,18 +665,495 @@ callbacks.shift()();
 
 <!-- jsChart -->  
 
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartTableID39226ccb9bdc"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartTableID407369b61199"></script>
  
 
 <!-- divChart -->
 
-<div id="TableID39226ccb9bdc" 
+<div id="TableID407369b61199" 
   style="width: 500; height: 200;">
 </div>
 
-<p>And we can view these results in a map</p>
+<p>Overall, USA continues to lead by far with China, Germany and Great Britain following and Australia a close 4th, which we can visualize in the following map:</p>
 
-<p><strong>Till then&hellip;</strong></p>
+<!-- GeoChart generated in R 3.1.2 by googleVis 0.5.8 package -->
+
+<!-- Thu Feb 19 01:46:16 2015 -->
+
+<!-- jsHeader -->
+
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataGeoChartID40731830ea4f () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+ "United States",
+10 
+],
+[
+ "China",
+6 
+],
+[
+ "Germany",
+5 
+],
+[
+ "Great Britain",
+4 
+],
+[
+ "Russia",
+4 
+],
+[
+ "Austria",
+3 
+],
+[
+ "Brazil",
+3 
+],
+[
+ "Canada",
+3 
+],
+[
+ "Australia",
+2 
+],
+[
+ "Cuba",
+2 
+],
+[
+ "Netherlands",
+2 
+],
+[
+ "South Korea",
+2 
+],
+[
+ "Italy",
+1 
+],
+[
+ "Japan",
+1 
+],
+[
+ "Norway",
+1 
+],
+[
+ "Spain",
+1 
+] 
+];
+data.addColumn('string','Country');
+data.addColumn('number','number.of.sports');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartGeoChartID40731830ea4f() {
+var data = gvisDataGeoChartID40731830ea4f();
+var options = {};
+options["width"] =    700;
+options["height"] =    500;
+options["projection"] = "kavrayskiy-vii";
+options["page"] = "disable";
+
+    var chart = new google.visualization.GeoChart(
+    document.getElementById('GeoChartID40731830ea4f')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "geochart";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartGeoChartID40731830ea4f);
+})();
+function displayChartGeoChartID40731830ea4f() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+ 
+
+<!-- jsChart -->  
+
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartGeoChartID40731830ea4f"></script>
+ 
+
+<!-- divChart -->
+
+<div id="GeoChartID40731830ea4f" 
+  style="width: 700; height: 500;">
+</div>
+
+<h2>Average age by sport</h2>
+
+<p>We took the age of the medal winners in different sports and averaged it to have a metric that would help us at what age do athletes get medals depending on the sport. </p>
+
+<!-- BarChart generated in R 3.1.2 by googleVis 0.5.8 package -->
+
+<!-- Thu Feb 19 01:46:16 2015 -->
+
+<!-- jsHeader -->
+
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataBarChartID4073fa4174c () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+ "Alpine Skiing",
+26.75409836 
+],
+[
+ "Archery",
+25.53571429 
+],
+[
+ "Athletics",
+26.05822416 
+],
+[
+ "Badminton",
+25.53846154 
+],
+[
+ "Baseball",
+27.05092593 
+],
+[
+ "Basketball",
+27.05574913 
+],
+[
+ "Beach Volleyball",
+29.85416667 
+],
+[
+ "Biathlon",
+28.81914894 
+],
+[
+ "Bobsleigh",
+29.66666667 
+],
+[
+ "Boxing",
+24.20212766 
+],
+[
+ "Canoeing",
+26.65423729 
+],
+[
+ "Cross Country Skiing",
+28.390625 
+],
+[
+ "Curling",
+32.85365854 
+],
+[
+ "Cycling",
+27.36781609 
+],
+[
+ "Diving",
+22.53982301 
+],
+[
+ "Equestrian",
+37.92356688 
+],
+[
+ "Fencing",
+26.79565217 
+],
+[
+ "Figure Skating",
+25.12962963 
+],
+[
+ "Football",
+24.12285012 
+],
+[
+ "Freestyle Skiing",
+25.76190476 
+],
+[
+ "Gymnastics",
+21.34020619 
+],
+[
+ "Handball",
+28.22507123 
+],
+[
+ "Ice Hockey",
+26.9296875 
+],
+[
+ "Judo",
+25.69196429 
+],
+[
+ "Luge",
+28.83333333 
+],
+[
+ "Modern Pentathlon",
+27.25 
+],
+[
+ "Nordic Combined",
+25.12820513 
+],
+[
+ "Rhythmic Gymnastics",
+18.9047619 
+],
+[
+ "Rowing",
+27.77777778 
+],
+[
+ "Sailing",
+29.95238095 
+],
+[
+ "Shooting",
+31.06629834 
+],
+[
+ "Short-Track Speed Skating",
+22.69791667 
+],
+[
+ "Skeleton",
+29.61111111 
+],
+[
+ "Ski Jumping",
+24.8 
+],
+[
+ "Snowboarding",
+25.04166667 
+],
+[
+ "Softball",
+27.04477612 
+],
+[
+ "Speed Skating",
+26.38834951 
+],
+[
+ "Swimming",
+22.61806982 
+],
+[
+ "Synchronized Swimming",
+23.85321101 
+],
+[
+ "Table Tennis",
+25.64179104 
+],
+[
+ "Taekwondo",
+23.75892857 
+],
+[
+ "Tennis",
+26.67605634 
+],
+[
+ "Trampoline",
+23.91666667 
+],
+[
+ "Triathlon",
+28.125 
+],
+[
+ "Waterpolo",
+26.36601307 
+],
+[
+ "Weightlifting",
+24.18888889 
+],
+[
+ "Wrestling",
+25.79591837 
+] 
+];
+data.addColumn('string','Sport');
+data.addColumn('number','Age');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartBarChartID4073fa4174c() {
+var data = gvisDataBarChartID4073fa4174c();
+var options = {};
+options["allowHtml"] = true;
+options["legend"] = "none";
+options["width"] =    900;
+options["height"] =   1600;
+
+    var chart = new google.visualization.BarChart(
+    document.getElementById('BarChartID4073fa4174c')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "corechart";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartBarChartID4073fa4174c);
+})();
+function displayChartBarChartID4073fa4174c() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+ 
+
+<!-- jsChart -->  
+
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBarChartID4073fa4174c"></script>
+ 
+
+<!-- divChart -->
+
+<div id="BarChartID4073fa4174c" 
+  style="width: 900; height: 1600;">
+</div>
+
+<p>Based on age based analysis, we came up with following major insights:</p>
+
+<p>The average age of an Olympian winning a medal is 26.4 years</p>
+
+<p>The youngest people to win medals are in Gymnasts - particularly, Rythmic Gymnasts (18.9 years)</p>
+
+<p>Also, with water sports the average age is quite low at around 22.5 years</p>
+
+<p>However, as we thought, with practice sports like Shooting, Curling and Equestrian the average age is high 
+above 30 years with Equestrian having the highest average age at 37.9 years</p>
+
+<p>Also, by law of averages, team sports like Hockey, Basketball and Volleyball have average age near the total average of 26.4 years.</p>
+
+<h2>Number of medals for next summer Olympics?</h2>
+
+<p>Task Description
+For one specific country (in our example we picked the US), we wanted to use the total number of medals won at past Olympic games to predict the metal yield in 2016. We applied a linear regression model to conduct this forecast. Since the number of medals could vary significantly between winter and summer games, we selected only medals won at summer Olympics.</p>
+
+<p>Approach
+1)      Convert data into a Pivot Table</p>
+
+<p>2)      Filter out the medals won by the US at summer Olympics</p>
+
+<p>3)      Run the regression (independent variables: year dates -&gt; dependent variables: sum of medals)</p>
+
+<p>4)      Predict the number of medals for 2016 based on the calculated regression coefficients</p>
+
+<p><img src="data:image/png;base64,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q1fb9OnTrWHDhi64b9iwwRYtWmSXXHKJ/fXXXzZo0KC8NmUZAggggAACCOQhkBZX8K+99pqNHz/eWrZsabvssouVKFHCKleubG3btrWxY8fa1KlT8yg6ixBAAAEEEEAgkUBaBHg1xc+ePTvPMr700ktWs2bNPD9jIQIIIIAAAgjkLZAWTfTXX3+9nXbaaXbnnXdao0aNrFKlSvbbb7/Z4sWLTZ3uZsyYkXfpWYoAAggggAACeQqkRYBv3bq1ffzxxzZv3jxbtmyZux+vq3bdd+/YsaNrss+z9CxEAAEEEEAAgTwF0iLAq2Q777yzHX744e6KfePGjVa1atU8C8xCBBBAAAEEEChYIC3uwTNMruADxRoIIIAAAggURSAtruCDGiane/VvvPFGnvX/4IMP3Dj78847L8/PWYgAAggggEA2CeQb4H/88UerVauWG4f+4IMP2m677WYnnHBC4PXXMDndf69Tp04079hhciNHjizUOPhWrVpZ7dq1o3nEvli5cqVt2rQpdhGvEUAAAQQQyFqBhAF+7ty5duSRR9pXX31l6uW+YMECU1P6r7/+agMGDAgUxB8md+qpp8blW5RhcvXr1zf95JUU+DWZDgkBBBBAAIEwCCQM8I899phNnDjRXRFPnjzZ3nnnHdcB7qqrrgo8wDNMLgxfNeqIAAIIIFCcAgkDvMaha6janDlzXDO9rrLff/99N0Y96ALmNUyuevXq1rdvX+vevTvD5IIGJz8EEEAAgawXSBjge/To4eaB/+eff6x///5uXvh+/frZiBEjAkf5+++/3SQ3S5YssQsvvNDKlSvnfut2wPHHH29PPvmklS1bNvD9kiECCCCAAALZKpAwwGtmuRo1atj69eutV69etnTpUhs3bpwbqx40xmWXXeZmrdt///3t5JNPtlKlStlzzz1nu+66qw0ZMsTNRa/lJAQQQAABBBAonEDCAK/Nu3bt6nJR57Q99tjDGjduXLhci7iWhrepE5+mqNXV+5o1a+ywww5zudx444129dVXu8BfxGxZHQEEEEAAgdAKJJzoZtu2babgqie8qTf966+/7prLf/7558Cx9IjYL7/80uU7cOBAd+/d38lnn32WtBMLfx/8RgABBBBAINsEEgb4CRMmuEljpkyZ4urcuXNnNwRNy4NOQ4cOteOOO85eeOEFq1evnh100EFuF8OHD7dh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JaKTiHRIJVSIlDcjpGEB1LyoDnJ5dZJTpwr1lsydtm7darr/zr333DJFf789/kXfC1skEthef21XqVKlRNmyvJAC+fkXMgtW2wGB7fFXKNVw0bxiww4UZYc2JcDvEB8bI4AAAgggkJ4CoRwHn56HglIhgAACCCAQnAABPjhLckIAAQQQQCBtBAjwaXMoKAgCCCCAAALBCRDgg7MkJwQQQAABBNJGgACfNoeCgiCAAAIIIBCcAAE+OEtyQgABBBBAIG0ECPBpcygoCAIIIIAAAsEJEOCDsyQnBBBAAAEE0kaAAJ82h4KCIIAAAgggEJwAAT44S3JCAAEEEEAgbQQI8GlzKCgIAggggAACwQkQ4IOzJCcEEEAAAQTSRoAAnzaHgoIggAACCCAQnAABPjhLckIAAQQQQCBtBAjwaXMoKAgCCCCAAALBCRDgg7MkJwQQQAABBNJGgACfNoeCgiCAAAIIIBCcAAE+OEtyQqBAgb///tt+/fXXAtdL9xV++eUXi0Qi6V5MyodAqAUI8KE+/FS+uARWr15tPXr0sJo1a1rr1q2tTp06NmHChOLafSD72bx5s11zzTVWrVo1a9Omje2xxx528sknm+rmp3r16tlXX33lv03K7yuuuMKuvvrqpORNpghkk0CpbKoMdUEgXQWuvPJKa9Sokb3wwgtWqlQp+/rrr22//faz/fff3wXLdC13bLkuueQSW7Zsmc2aNcuVW60Rd9xxhx166KH21ltvmYJ7caSrrrrKSpQoURy7Yh8IZLQAV/AZffgofKYI/PHHHy4oKbgr7bXXXjZnzhzbdddd3fuOHTvad999517rnw4dOtjy5cvts88+s379+tn5559v1atXt27dutnSpUutU6dO1qBBA7vzzjvdNoVdTysrGLdq1cqqVKliJ554oqm5Xem2226zG264wZXp4osvdsv8fxTYJ02a5H50UqJUunRp09V048aN7dlnn/VXdb+HDh1qEydOjC578803rW/fvkWqz6mnnmr9+/e3WrVq2XHHHWdr1qxx+T3wwAOuHHrz22+/We/evd06xxxzjC1cuNCt8+ijj9puu+3mzPT5unXr3HL+QSBMAgT4MB1t6poygcsuu8wefvhha968uQ0fPtzeffdddxWspnqlb775xrZs2RItn//+r7/+MgUrNYd/9NFH9tNPP9khhxxi//rXv2zatGl24403mprOC7vezz//bD179jSVZ/HixVa5cmW75ZZb3H4VQMeOHWv33HOPnX766dGy6MWiRYusfv367tZCjg+8NwcccIAtWLAgx+KDDz7YHnrooeiyJ554wq1X2HJqvaeeespq165tX375pdvv2Wef7fJTOf2TEp38lCtXzj799FPr3r27XXDBBc5CJ0Qvvviiffvtt6aTq/vuuy9aFl4gEBoBr6MMCQEEikFg5cqVkdGjR0e8AB0pWbJkxLsaj2zYsMHtuW7duhEvkEVL4QW2iNeMH/nggw8i5cuXjy4fNmxYxAvQ0fdeS4Bbp7DreYHO7d+78o3oZ8mSJZG9997b5edddUe8K+Zo3rEvvGAd8YJ27KLo63vvvTfSpUsX996vhxdUIxUrVoyozlu3bo14V+GRH3/8sUj18Vo7oj4q50477RTxAn/k8ssvj4wYMSLindhEtI53ouL2vW3btsgrr7wS0b5lNmbMmIjXP8CtFy0sLxAIkQBX8KE5laOiqRRQU7IX/MwL0DZv3jx3Zblq1Sq7++67CyxW7L1tL3CZF5Cj25QpU8b++ecf974w6/3www+umbxp06amH90/X79+vXnB1+Xh3zKI7uC/L1q0aGHff/997sXuvZaryT82qZzqVDh16lSbPXu2K7NfPv+31s+vPs2aNTPvJMFlq9sAWle3LfykWxq6evc9dF/+qKOOcutNnjzZtZio1UHlSHbHP79M/EYgnQQI8Ol0NChLVgqoCV1BLfYeu5rc1Qyu5mcl7+rUNbXrtQJ27FA6fVaYVJj1DjroIGvXrp3p5ML/+fDDD6Md5BLloQCvkxT1G4hN3tW5PfPMM3bggQfGLnavTznlFBfgFeTV295Pifbhf+7/lpd/8rJixQrbtGmT63fgf161alXbuHGjq4e/7MEHH3TlVD+BTz75xP1UqlTJNd376/AbgbAIEODDcqSpZ8oEypYt6zrHDRgwwHWQU0G8Jmd75JFHrHPnzq5cutf83nvvudfqsKYe6slIRxxxhL3//vv28ccfu+wfe+wxVzaveTvf3alD3f33329eE77rC6CVvdsLdtZZZ7nRAb169YrbXh0CFWS9ZnPL6/O4DXItUP46OfBaVN39/Pbt27srdn81db5r2bKl66OgdXTyoV79un+vvg5qrVArgO7NkxAIowDD5MJ41KlzsQuog52Co66EFYwUMAcPHuyWqTAa+qUOY+rwpk5rClDJSGrSvvnmm13TvJqv9V4d0ApzVa1e7ercpnL6Y991gqIreH90QGyZdWKj4KpAq2Bc1KSTnuuuu840PE89/mfMmBGXhXrUn3TSSTZu3DjXnK8Ar+00Tl4jESpUqGC///57XC//uIxYgEAWCpRQf4MsrBdVQiAtBXSlrJ7w6j2feyy3rtoVjNT0nOykpm/de9fQu+1JuoWgoOt1Fsx3cw2N69q1q/Xp0yff9XJ/OH/+fDvjjDPcLQztS5Pr5Jd04lGjRo24VTRqQJMLkRAIo0D+/zvDKEKdEUiigAKiOtvlDu7apa7qiyO4a1+6Yt/e4K7tFXDzC+4aj37hhRe62wEah74jqaDgrrzzCu5aTnCXAimsAgT4sB556o1AEgV08qCJZl599VVTU31R05577mk33XRTUTdjfQQQiBGgiT4Gg5cIIIAAAghkiwBX8NlyJKkHAggggAACMQIE+BgMXiKAAAIIIJAtAgT4bDmS1AMBBBBAAIEYAQJ8DAYvEUAAAQQQyBYBAny2HEnqgQACCCCAQIwAAT4Gg5cIIIAAAghkiwABPluOJPVAAAEEEEAgRoAAH4PBSwQQQAABBLJFgACfLUeSeiCAAAIIIBAjQICPweAlAggggAAC2SJAgM+WI0k9EEAAAQQQiBEgwMdg8BIBBBBAAIFsESDAZ8uRpB4IIIAAAgjECBDgYzB4iQACCCCAQLYI/D+1LNTbUvCtsQAAAABJRU5ErkJggg==" alt="plot of chunk unnamed-chunk-6"/> </p>
+
+<p>The number of medals expected for United States in 2016 is 291</p>
+
+<p>Conclusion
+The number of medals won by the US team at the last four summer Olympics vary between 243 in 2000 and 317 in 2008. Despite the fact that the number dropped in 2012 to 254, the overall trend is increasing; the upward-slopping regression line has a slop of 2.125. Extrapolating this trend to 2016, gives us a prediction of 291 US medals for the games in Rio de Janeiro.</p>
+
+<p>Limitations
+1)      The data source lists all athletes that won Olympic medals – regards if it’s an individual or team sport. This means that team sports have a stronger influence on the regression outcome than sports with only one athlete.</p>
+
+<p>2)      Due to the underlying mechanics of a linear regression all Olympic games influence the forecast for 2016 equally. For a more accurate prediction it would be reasonable to put more weight on the recent years (2012, 2008) at the expense of the earlier years (2004, 2000).</p>
+
+<p>3)      For the sake of this exercise we assumed that the number of sports and team sizes stay constant over the various Olympic games.</p>
 
 </body>
 

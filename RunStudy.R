@@ -23,6 +23,10 @@ datafile_name="OlympicAthletesData" # do not add .csv at the end! make sure the 
 
 report_file = "Report_Olympics"
 
+# Please ENTER the country for which you want the regression
+reg_country = "United States"
+
+
 ###################################
 # Would you like to also start a web application on YOUR LOCAL COMPUTER once the report and slides are generated?
 # Select start_webapp <- 1 ONLY if you run the case on your local computer
@@ -56,11 +60,25 @@ shiny1 <- summarise(group_by(melt(ProjectData, id=c(3,4,6,10), measure=c(10)),Co
 table2 <- cast(melt(ProjectData, id=c(6), measure=c(2)), Sport ~ variable, mean)
 shiny2 <- summarise(group_by(melt(ProjectData, id=c(2,3,6), measure=c(2)), Country, Sport), mean(value))
 
+# REGRESSSION
 
-# ANALYZING THE DATA
+# Step 1: Convert data into a Pivot Table
+regdata <- ProjectData
+names(regdata)[10] <- "Total.Medals"
+groupedData <- summarise(group_by(regdata, Country, Year), totalMedals = sum(Total.Medals)) 
+groupedData <- dcast(groupedData, Country ~ Year, value.var = "totalMedals")
+head(groupedData)
 
-if (datafile_name == "OlympicAthletesData")
-  colnames(ProjectData)<-gsub("\\.","  ",colnames(ProjectData))
+# Step 2: Choose the selected country and summer games
+selectedCountry = filter(groupedData, Country == reg_country)
+selectedCountry[is.na(selectedCountry)] <- 0
+selectedSummer <- as.numeric(selectedCountry[,c(2,4,6,8)])
+
+# Step 3: Run the regression and display the scatter plot
+years <- c(2000,2004,2008,2012)
+fit <- lm(selectedSummer ~ years)
+coeffs = coefficients(fit)
+head(fit)
 
 ####################################
 # SHINY
