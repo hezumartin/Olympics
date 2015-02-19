@@ -35,6 +35,8 @@ Contextual Knowledge
 
 <IMG SRC="https://github.com/hezumartin/Olympics/blob/master/doc/Contextual%20Knowledge.png">
 (Fix the image)
+=======
+
 
 Process
 --------------------------------------------
