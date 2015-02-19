@@ -24,7 +24,7 @@ datafile_name="OlympicAthletesData" # do not add .csv at the end! make sure the 
 report_file = "Report_Olympics"
 
 # Please ENTER the country for which you want the regression
-reg_country = "United States"
+reg_country = "Austria"
 
 
 ###################################

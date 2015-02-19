@@ -77,7 +77,6 @@ Based on these results, we can infer the following:
 For mountain sports like alpine skiing, countries like Austria and Switzerland are on the top.
 
 For athletics, there was a diverse presence from three continents - USA, Russia and Jamaica
-
 Cuba has a varied presence in strength sports like Boxing and Baseball
 
 For table tennis and badminton, traditional players like China and South Korea have continued to be strong
@@ -162,6 +161,9 @@ Approach
 
 # Step 4: Estimate the number of medials for 2016
 medalForcast = coeffs[1] + coeffs[2]*2016 
+if (medalForcast<0) medalForcast <- 0
+if (coeffs[2]>0) trend <- "positive"
+if (coeffs[2]<0) trend <- "negative"
 newYears <- c(years, 2016)
 newMedals <- c(selectedSummer, medalForcast)
 plot(newYears, newMedals, xaxt = "n", xlab="Summer Olympics",ylab="Number of Medals over all Athletes")
@@ -174,10 +176,12 @@ abline(fit)
 
 The number of medals expected for `r reg_country` in 2016 is `r medalForcast`
 
-Conclusion
-The number of medals won by the US team at the last four summer Olympics vary between 243 in 2000 and 317 in 2008. Despite the fact that the number dropped in 2012 to 254, the overall trend is increasing; the upward-slopping regression line has a slop of 2.125. Extrapolating this trend to 2016, gives us a prediction of 291 US medals for the games in Rio de Janeiro.
+**Conclusion**
+
+The number of medals won by the `r reg_country` team at the last four summer Olympics vary between `r min(selectedSummer)` and `r max(selectedSummer)`. The overall trend is `r trend`, resulting in a regression function with a slope of `r coeffs[2]`. Extrapolating this trend to 2016, gives us a prediction of `r medalForcast`  medals for `r reg_country` in Rio de Janeiro.
  
-Limitations
+**Limitations**
+
 1)      The data source lists all athletes that won Olympic medals – regards if it’s an individual or team sport. This means that team sports have a stronger influence on the regression outcome than sports with only one athlete.
 
 2)      Due to the underlying mechanics of a linear regression all Olympic games influence the forecast for 2016 equally. For a more accurate prediction it would be reasonable to put more weight on the recent years (2012, 2008) at the expense of the earlier years (2004, 2000).
