@@ -34,7 +34,7 @@ shinyUI(pageWithSidebar(
     HTML("(<strong>Press 'ctrl' or 'shift'</strong> to select multiple  variables)"),
     HTML("<br>"),
     HTML("<br>"),
-    selectInput("country_selected","Country of your choice",  choices=c("attributes used"),selected=NULL, multiple=TRUE),
+      selectInput("country_selected","Country of your choicee",  choices=c("USA", "CANADA"),selected="USA", multiple=TRUE),
     HTML("<br>"),
      ###########################################################
     # STEP 2.3: buttons to download the new report and new slides 
@@ -73,7 +73,7 @@ shinyUI(pageWithSidebar(
     tabsetPanel(
     
       tabPanel("Parameters", 
-               numericInput("factor1", "Select a country to use:",1),       
+               selectInput("factor1", "Select a country to usee:",  c("USA", "CANADA"),selected="USA"),,1),       
                actionButton("action_visual", "Show/Update Results"),
                HTML("<br>"),
                plotOutput("NEW_ProjectData")) 

@@ -25,10 +25,10 @@ shinyServer(function(input, output,session) {
     ProjectData=data.matrix(ProjectData)
     colnames(ProjectData)<-gsub("\\."," ",colnames(ProjectData))
     
-    updateSelectInput(session, "country_selected","Country of your choice",  colnames(ProjectData), selected=colnames(ProjectData)[3])
+    updateSelectInput(session, "country_selected","Country of your choicee",  colnames(ProjectData), selected=colnames(ProjectData)[3])
     ProjectData
   })
-  
+
 user_inputs <- reactive({
     input$datafile_name_coded
     input$country_selected
@@ -36,6 +36,11 @@ user_inputs <- reactive({
     ProjectData = read_dataset()
     
     use_attributes = intersect(colnames(ProjectData),input$country_selected)
+    
+    list(ProjectData = read_dataset(), 
+         country_selected = input$country_selected
+    )
+    
     
   }) 
 
@@ -45,13 +50,14 @@ the_avgage_countries_tab<-reactive({
     input$country_selected
     all_inputs <- user_inputs()
     ProjectData = all_inputs$ProjectData 
-   
+    country_selected = all_inputs$country_selected
     summarise(group_by(melt(ProjectData, id=c(2,3,6), measure=c(2)), country_selected, Sport), mean(Age))
   
 })
 
 output$parameters<-renderTable({
   the_parameters_tab()
+})
 })
 
 

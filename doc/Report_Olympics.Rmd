@@ -136,10 +136,10 @@ Also, by law of averages, team sports like Hockey, Basketball and Volleyball hav
 Number of medals for next summer Olympics?
 --------------------------------------------
 
-Task Description
+**Task Description**
 For one specific country (in our example we picked the United States), we wanted to use the total number of medals won at past Olympic games to predict the metal yield in 2016. We applied a linear regression model to conduct this forecast. Since the number of medals could vary significantly between winter and summer games, we selected only medals won at summer Olympics.
  
-Approach
+**Approach**
 1)      Convert data into a Pivot Table
 
 2)      Filter out the medals won by the US at summer Olympics

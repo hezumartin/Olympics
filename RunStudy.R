@@ -91,7 +91,7 @@ source(paste(local_directory,"R/runcode.R", sep = "/"))
 if (start_local_webapp){
   
   # first load the data files in the data directory so that the App see them
-  OlympicAthletesData <- read.csv(paste(local_directory, "data/OlympicAthletesData.csv", sep = "/"), sep=",", dec=",") # this contains only the matrix ProjectData
+  OlympicAthletesData <- read.csv(paste(local_directory, "data/OlympicAthletesData.csv", sep = "/"), sep=";", dec=",") # this contains only the matrix ProjectData
   OlympicAthletesData=data.matrix(OlympicAthletesData) # this file needs to be converted to "numeric"....
   
   # now run the app

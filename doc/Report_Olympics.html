@@ -194,27 +194,30 @@ Priya Sankarlingam,
 
 <h2>Data Validation</h2>
 
-<p>We extracted the data from the Tableau website. At the beginningg, we thought it would be a good cource of information to do data analysis but the main challenge that we have faced is format the data in a proper way to get it suitable for our analysis.</p>
+<p>We extracted the data from the Tableau website. At the beginningg, we thought it would be a good source of information to do data analysis but the main challenge that we have faced is format the data in a proper way to get it suitable for our analysis.</p>
 
-<p>We have done trend analysis to estimate the model. We have analysed trend for top country for each sport to further predict a data point for the next Olympics. This has been divided by the two types of Olympics. We further assessed performance on first validation data to see if 2012 figures match the predictive model that we have developed.
-We reiterated the predictive model and finally were able to find a predictor which was closes to London 2012 figures.</p>
+<p>There is one row of data for each athlete and all of them get a medal in case a team wins a team sport. We had to take into account these factors for the conclusions of our analysis.</p>
 
 <h2>Final Results</h2>
 
-<p>•  Our analysis showed that since 2000,  United States has been the best country in getting Olympic medals combined in all sports.
-• Our prediction is that in the next Olympics,  would be getting the highest number of total medals.
-• Further, by each sport, we have the following table for top countries per sport.</p>
+<p>Our analysis showed that there are 16 different countries that are the leaders in number of medals.  </p>
+
+<p>Since 2000,  United States has been the best country in getting Olympic medals combined in all sports.</p>
+
+<p>Our prediction is that in the next Olympics, United States would be getting the highest number of total medals.</p>
+
+<p>Further, by each sport, we have the following table for top countries per sport.</p>
 
 <!-- Table generated in R 3.1.2 by googleVis 0.5.8 package -->
 
-<!-- Thu Feb 19 15:05:30 2015 -->
+<!-- Thu Feb 19 15:51:52 2015 -->
 
 <!-- jsHeader -->
 
 <script type="text/javascript">
  
 // jsData 
-function gvisDataTableID46e41d180960 () {
+function gvisDataTableID46e462eb6fea () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -426,8 +429,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartTableID46e41d180960() {
-var data = gvisDataTableID46e41d180960();
+function drawChartTableID46e462eb6fea() {
+var data = gvisDataTableID46e462eb6fea();
 var options = {};
 options["allowHtml"] = true;
 options["showRowNumber"] = true;
@@ -437,7 +440,7 @@ options["allowHTML"] = true;
 options["page"] = "disable";
 
     var chart = new google.visualization.Table(
-    document.getElementById('TableID46e41d180960')
+    document.getElementById('TableID46e462eb6fea')
     );
     chart.draw(data,options);
     
@@ -461,9 +464,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartTableID46e41d180960);
+callbacks.push(drawChartTableID46e462eb6fea);
 })();
-function displayChartTableID46e41d180960() {
+function displayChartTableID46e462eb6fea() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -489,42 +492,39 @@ callbacks.shift()();
 
 <!-- jsChart -->  
 
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartTableID46e41d180960"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartTableID46e462eb6fea"></script>
  
 
 <!-- divChart -->
 
-<div id="TableID46e41d180960" 
+<div id="TableID46e462eb6fea" 
   style="width: 900; height: 300;">
 </div>
 
-<p>Based on these results, we can infer the following:</p>
+<p>Based on these results, we added a few comments which relevance is based on our judgement:</p>
 
-<p>For mountain sports like alpine skiing, countries like Austria and Switzerland are on the top.</p>
+<p>United States is leader in Athletics, Basketball and other countries, mostly team based countries.</p>
 
-<p>For athletics, there was a diverse presence from three continents - USA, Russia and Jamaica
-Cuba has a varied presence in strength sports like Boxing and Baseball</p>
+<p>Cuba has a varied presence in strength sports like Boxing and Baseball</p>
 
 <p>For table tennis and badminton, traditional players like China and South Korea have continued to be strong</p>
 
-<p>Russia continues to be one of the strongest countries in Weightlifting and Wrestling</p>
-
 <p>China is also strong in Badminton or Table Tennis but also in Shooting and many other sports</p>
 
-<p>USA and Australia continue to dominate swimming.</p>
+<p>United States and Russia dominate swimming.</p>
 
 <p>Based on the following ranking of countries by the number of countries in which are leaders in medals </p>
 
 <!-- Table generated in R 3.1.2 by googleVis 0.5.8 package -->
 
-<!-- Thu Feb 19 15:05:30 2015 -->
+<!-- Thu Feb 19 15:51:53 2015 -->
 
 <!-- jsHeader -->
 
 <script type="text/javascript">
  
 // jsData 
-function gvisDataTableID46e42fd44621 () {
+function gvisDataTableID46e4319e5c73 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -600,8 +600,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartTableID46e42fd44621() {
-var data = gvisDataTableID46e42fd44621();
+function drawChartTableID46e4319e5c73() {
+var data = gvisDataTableID46e4319e5c73();
 var options = {};
 options["allowHtml"] = true;
 options["showRowNumber"] = false;
@@ -611,7 +611,7 @@ options["allowHTML"] = true;
 options["page"] = "disable";
 
     var chart = new google.visualization.Table(
-    document.getElementById('TableID46e42fd44621')
+    document.getElementById('TableID46e4319e5c73')
     );
     chart.draw(data,options);
     
@@ -635,9 +635,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartTableID46e42fd44621);
+callbacks.push(drawChartTableID46e4319e5c73);
 })();
-function displayChartTableID46e42fd44621() {
+function displayChartTableID46e4319e5c73() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -663,12 +663,12 @@ callbacks.shift()();
 
 <!-- jsChart -->  
 
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartTableID46e42fd44621"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartTableID46e4319e5c73"></script>
  
 
 <!-- divChart -->
 
-<div id="TableID46e42fd44621" 
+<div id="TableID46e4319e5c73" 
   style="width: 500; height: 200;">
 </div>
 
@@ -676,14 +676,14 @@ callbacks.shift()();
 
 <!-- GeoChart generated in R 3.1.2 by googleVis 0.5.8 package -->
 
-<!-- Thu Feb 19 15:05:30 2015 -->
+<!-- Thu Feb 19 15:51:53 2015 -->
 
 <!-- jsHeader -->
 
 <script type="text/javascript">
  
 // jsData 
-function gvisDataGeoChartID46e4549a14c0 () {
+function gvisDataGeoChartID46e415afed6d () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -759,8 +759,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartGeoChartID46e4549a14c0() {
-var data = gvisDataGeoChartID46e4549a14c0();
+function drawChartGeoChartID46e415afed6d() {
+var data = gvisDataGeoChartID46e415afed6d();
 var options = {};
 options["width"] =    700;
 options["height"] =    500;
@@ -768,7 +768,7 @@ options["projection"] = "kavrayskiy-vii";
 options["page"] = "disable";
 
     var chart = new google.visualization.GeoChart(
-    document.getElementById('GeoChartID46e4549a14c0')
+    document.getElementById('GeoChartID46e415afed6d')
     );
     chart.draw(data,options);
     
@@ -792,9 +792,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartGeoChartID46e4549a14c0);
+callbacks.push(drawChartGeoChartID46e415afed6d);
 })();
-function displayChartGeoChartID46e4549a14c0() {
+function displayChartGeoChartID46e415afed6d() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -820,12 +820,12 @@ callbacks.shift()();
 
 <!-- jsChart -->  
 
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartGeoChartID46e4549a14c0"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartGeoChartID46e415afed6d"></script>
  
 
 <!-- divChart -->
 
-<div id="GeoChartID46e4549a14c0" 
+<div id="GeoChartID46e415afed6d" 
   style="width: 700; height: 500;">
 </div>
 
@@ -837,14 +837,14 @@ callbacks.shift()();
 
 <!-- BarChart generated in R 3.1.2 by googleVis 0.5.8 package -->
 
-<!-- Thu Feb 19 15:05:30 2015 -->
+<!-- Thu Feb 19 15:51:53 2015 -->
 
 <!-- jsHeader -->
 
 <script type="text/javascript">
  
 // jsData 
-function gvisDataBarChartID46e451b98cd8 () {
+function gvisDataBarChartID46e43ef38e45 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -1044,8 +1044,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartBarChartID46e451b98cd8() {
-var data = gvisDataBarChartID46e451b98cd8();
+function drawChartBarChartID46e43ef38e45() {
+var data = gvisDataBarChartID46e43ef38e45();
 var options = {};
 options["allowHtml"] = true;
 options["legend"] = "none";
@@ -1053,7 +1053,7 @@ options["width"] =    900;
 options["height"] =   1600;
 
     var chart = new google.visualization.BarChart(
-    document.getElementById('BarChartID46e451b98cd8')
+    document.getElementById('BarChartID46e43ef38e45')
     );
     chart.draw(data,options);
     
@@ -1077,9 +1077,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartBarChartID46e451b98cd8);
+callbacks.push(drawChartBarChartID46e43ef38e45);
 })();
-function displayChartBarChartID46e451b98cd8() {
+function displayChartBarChartID46e43ef38e45() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -1105,16 +1105,16 @@ callbacks.shift()();
 
 <!-- jsChart -->  
 
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBarChartID46e451b98cd8"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartBarChartID46e43ef38e45"></script>
  
 
 <!-- divChart -->
 
-<div id="BarChartID46e451b98cd8" 
+<div id="BarChartID46e43ef38e45" 
   style="width: 900; height: 1600;">
 </div>
 
-<p>Based on age based analysis, we came up with following major insights:</p>
+<p>Based on age based analysis, we came up with following conclusions:</p>
 
 <p>The average age of an Olympian winning a medal is 26.4054336 years</p>
 
@@ -1129,10 +1129,10 @@ above 30 years with Equestrian having the highest average age at 37.9 years</p>
 
 <h2>Number of medals for next summer Olympics?</h2>
 
-<p>Task Description
+<p><strong>Task Description</strong>
 For one specific country (in our example we picked the United States), we wanted to use the total number of medals won at past Olympic games to predict the metal yield in 2016. We applied a linear regression model to conduct this forecast. Since the number of medals could vary significantly between winter and summer games, we selected only medals won at summer Olympics.</p>
 
-<p>Approach
+<p><strong>Approach</strong>
 1)      Convert data into a Pivot Table</p>
 
 <p>2)      Filter out the medals won by the US at summer Olympics</p>
