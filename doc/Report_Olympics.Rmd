@@ -38,19 +38,21 @@ We are also planning to develop an application to come-up with more flexibility 
 Data Validation
 --------------------------------------------
 
-We extracted the data from the Tableau website. At the beginningg, we thought it would be a good cource of information to do data analysis but the main challenge that we have faced is format the data in a proper way to get it suitable for our analysis.
+We extracted the data from the Tableau website. At the beginningg, we thought it would be a good source of information to do data analysis but the main challenge that we have faced is format the data in a proper way to get it suitable for our analysis.
 
-We have done trend analysis to estimate the model. We have analysed trend for top country for each sport to further predict a data point for the next Olympics. This has been divided by the two types of Olympics. We further assessed performance on first validation data to see if 2012 figures match the predictive model that we have developed.
-We reiterated the predictive model and finally were able to find a predictor which was closes to London 2012 figures.
+There is one row of data for each athlete and all of them get a medal in case a team wins a team sport. We had to take into account these factors for the conclusions of our analysis.
 
 
 Final Results
 --------------------------------------------
 
-•  Our analysis showed that since 2000,  United States has been the best country in getting Olympic medals combined in all sports.
-•	Our prediction is that in the next Olympics,  would be getting the highest number of total medals.
-•	Further, by each sport, we have the following table for top countries per sport.
+Our analysis showed that there are 16 different countries that are the leaders in number of medals.  
 
+Since 2000,  United States has been the best country in getting Olympic medals combined in all sports.
+
+Our prediction is that in the next Olympics, United States would be getting the highest number of total medals.
+
+Further, by each sport, we have the following table for top countries per sport.
 
 ```{r echo=FALSE, message=FALSE, prompt=FALSE, results='asis'}
 table1 <- summarise(group_by(melt(ProjectData, id=c(3,6,10), measure=c(10)),Country, Sport), sum(value))
@@ -64,21 +66,17 @@ m1<-gvisTable(table1print,options=list(showRowNumber=TRUE,width=900, height=min(
 print(m1,'chart')
 ````
 
-Based on these results, we can infer the following:
+Based on these results, we added a few comments which relevance is based on our judgement:
 
+United States is leader in Athletics, Basketball and other countries, mostly team based countries.
 
-For mountain sports like alpine skiing, countries like Austria and Switzerland are on the top.
-
-For athletics, there was a diverse presence from three continents - USA, Russia and Jamaica
 Cuba has a varied presence in strength sports like Boxing and Baseball
 
 For table tennis and badminton, traditional players like China and South Korea have continued to be strong
 
-Russia continues to be one of the strongest countries in Weightlifting and Wrestling
-
 China is also strong in Badminton or Table Tennis but also in Shooting and many other sports
 
-USA and Australia continue to dominate swimming.
+United States and Russia dominate swimming.
 
 
 Based on the following ranking of countries by the number of countries in which are leaders in medals 
@@ -119,7 +117,7 @@ Bar <- gvisBarChart(table2,
                     options=list(legend='none', width=900, height=1600))
 print(Bar,'chart')
 ````
-Based on age based analysis, we came up with following major insights:
+Based on age based analysis, we came up with following conclusions:
 
 
 The average age of an Olympian winning a medal is `r mean(ProjectData$Age, na.rm=TRUE)` years
