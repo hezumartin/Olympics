@@ -3,11 +3,12 @@
 Olympic Data Analysis (Since 2000)
 ========================================================
 
-**Jesus Martin
-Jakob Rieckh
-Nihar R Prasad
-Priya Sankarlingam
-Jason Ng**
+**Jason Ng, 
+Jesus Martin,
+Jakob Rieckh,
+Nihar R Prasad,
+Priya Sankarlingam,
+**
 
 
 The Data
@@ -23,19 +24,13 @@ Objective
 
 We set out to analyse the given data in terms of: 
 • country ranking per sport
-•	average age of winning a medal 
+•	average age of winning a medal
+
+With the goal of having a better understanding on which countries are better at which sports and which countries are better at Olympics in general.
 
 Prediction Objective: On the basis of the past trends for each country, we are going to do a prediction of the medals won by each country
 
-We are also planning to develop an application to come-up with the same.
-
-
-Contextual Knowledge
---------------------------------------------
-
-<IMG SRC="https://github.com/hezumartin/Olympics/blob/master/doc/Contextual%20Knowledge.png">
-(Fix the image)
-=======
+We are also planning to develop an application to come-up with more flexibility over the data and more customized conclusions.
 
 
 Process
@@ -54,9 +49,9 @@ We reiterated the predictive model and finally were able to find a predictor whi
 Final Results
 --------------------------------------------
 
-•  Our analysis showed that since 2000,  ….. has been the best country in getting Olympic medals combined in all sports.
+•  Our analysis showed that since 2000,  United States has been the best country in getting Olympic medals combined in all sports.
 •	Our prediction is that in the next Olympics,  would be getting the highest number of total medals.
-•	Further, by each sport, we are predicting the following table.
+•	Further, by each sport, we have the following table for top countries per sport.
 
 
 ```{r echo=FALSE, message=FALSE, prompt=FALSE, results='asis'}
@@ -85,7 +80,7 @@ Russia continues to be one of the strongest countries in Weightlifting and Wrest
 
 China is also strong in Badminton or Table Tennis but also in Shooting and many other sports
 
-USA and Australia continue to dominate swimming
+USA and Australia continue to dominate swimming.
 
 
 Based on the following ranking of countries by the number of countries in which are leaders in medals 
@@ -100,7 +95,7 @@ print(m2,'chart')
 ```
 
 
-Overall, USA continues to lead by far with China, Germany and Great Britain following and Australia a close 4th, which we can visualize in the following map:
+Overall, USA continues to lead by far with China, Germany and Great Britain following and Russia a close 4th, which we can visualize in the following map:
 ```{r echo=FALSE, message=FALSE, prompt=FALSE, results='asis'}
 
 geo <- gvisGeoChart(tcountries,locationvar="Country", 
@@ -114,6 +109,8 @@ print(geo,'chart')
 ProjectData.m <- melt(ProjectData, id=c(6), measure=c(2))
 table2 <- cast(ProjectData.m, Sport ~ variable, mean)
 table2 <- table2[which(table2$Age > 0),]
+mean(ProjectData$Age, na.rm=TRUE)
+mintable2 <- min(table2$Age)
 ```
 
 Average age by sport
@@ -127,9 +124,9 @@ print(Bar,'chart')
 Based on age based analysis, we came up with following major insights:
 
 
-The average age of an Olympian winning a medal is 26.4 years
+The average age of an Olympian winning a medal is `r mean(ProjectData$Age, na.rm=TRUE)` years
 
-The youngest people to win medals are in Gymnasts - particularly, Rythmic Gymnasts (18.9 years)
+The youngest people to win medals are in Gymnasts - particularly, Rythmic Gymnasts (`r min(table2$Age)` years)
 
 Also, with water sports the average age is quite low at around 22.5 years
 
@@ -144,7 +141,7 @@ Number of medals for next summer Olympics?
 --------------------------------------------
 
 Task Description
-For one specific country (in our example we picked the US), we wanted to use the total number of medals won at past Olympic games to predict the metal yield in 2016. We applied a linear regression model to conduct this forecast. Since the number of medals could vary significantly between winter and summer games, we selected only medals won at summer Olympics.
+For one specific country (in our example we picked the United States), we wanted to use the total number of medals won at past Olympic games to predict the metal yield in 2016. We applied a linear regression model to conduct this forecast. Since the number of medals could vary significantly between winter and summer games, we selected only medals won at summer Olympics.
  
 Approach
 1)      Convert data into a Pivot Table
